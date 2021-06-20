@@ -7,6 +7,8 @@ import { TodoItemComponent } from './component/todo-item/todo-item.component';
 import { HeaderComponent } from './component/header/header.component';
 import { AddTodoComponent } from './component/add-todo/add-todo.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { AddTodoComponent } from './component/add-todo/add-todo.component';
     AddTodoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
