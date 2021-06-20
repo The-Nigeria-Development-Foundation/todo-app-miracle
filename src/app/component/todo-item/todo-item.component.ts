@@ -20,13 +20,12 @@ export class TodoItemComponent implements OnInit {
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void { }
-  
 
   //  Declares variable for fontawesome trashAlt icon
     trashIcon = faTrashAlt;
 
 
-  //  Sets classes for component dynamically
+  //  Sets classes dynamically
   setClasses(): any {
     return {
       'todo-item': true,

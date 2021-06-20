@@ -4,28 +4,26 @@ import { Todo } from '../models/Todo';
 @Injectable({
   providedIn: 'root'
 })
-export class TodoService {
+
+
+//  Manages all localStorage operations
+export class TodoService { 
 
   constructor() { }
 
-  //  Gets todos from localStoragae
+
+  //  Gets todos from localStorage
   getTodos():Todo[] {
-    let todos = [
-      {
-        title: 'Do stuff',
-        id: 1, 
-        completed: false
-      },
-      {
-        title: 'Do lots of stuff',
-        id: 2, 
-        completed: true
-      }
-    ];
-    localStorage.setItem('todo-app', JSON.stringify(todos));
-    //localStorage.clear();
     return JSON.parse(localStorage.getItem('todo-app') || '[]')
   }
+
+
+  
+  //  Adds or Deletes specific todo in localStorage by replacing with new todos
+  replaceTodos(todos):void {
+    localStorage.setItem('todo-app', JSON.stringify(todos));
+  }
+
 
 
   //  Toggles specific todo completed property in localStorage
@@ -38,15 +36,10 @@ export class TodoService {
     todos.map((todoKey) => {
 
       if (todo.id === todoKey.id) {
+        
         todoKey.completed = !todoKey.completed;
         localStorage.setItem('todo-app', JSON.stringify(todos));
       }
     })
-  }
-
-
-  //  Deletes specific todo in localStorage
-  DeleteTodo(todos):void {
-    localStorage.setItem('todo-app', JSON.stringify(todos));
   }
 }

@@ -9,6 +9,7 @@ import { Todo } from '../../models/Todo';
 })
 
 export class TodosComponent implements OnInit {
+  
   todos:Todo[];
 
   constructor(private todoService:TodoService) { }
@@ -17,8 +18,25 @@ export class TodosComponent implements OnInit {
     this.todos = this.todoService.getTodos();
   }
 
+
+  //  Deletes todo in localStorage and UI 
   deleteTodo(todo:Todo) {
+
+    //  Deletes todo in UI
     this.todos = this.todos.filter(todoKey => todoKey.id !== todo.id);
-    this.todoService.DeleteTodo(this.todos);
+
+    //  Deletes todo in localStorage
+    this.todoService.replaceTodos(this.todos);
+  } 
+
+
+  // Adds todo in localStorage and UI 
+  addTodo(todo:Todo) {
+
+    //  Adds todo in UI
+    this.todos.push(todo);
+
+    //  Adds todo in localStorage
+    this.todoService.replaceTodos(this.todos);
   } 
 }

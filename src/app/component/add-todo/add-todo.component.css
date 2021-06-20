@@ -1,0 +1,39 @@
+form {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  height: 20px;
+  border-radius: 3px 0 0 3px;
+  border: 1px solid lightgrey;
+  border-right: none;
+  outline: none;
+}
+
+.input-field:focus-visible {
+  border: 1px solid grey;
+}
+
+.add-btn {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  background: #EDC68F;
+  border-radius: 3px;
+  border: none;
+  position: relative;
+  top: 1.5px;
+  right: 21px;
+}
+
+.isactive {
+  background: lightsalmon;
+}
+
+@media screen 
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px) {
+    .input-field {
+      width: 50vw;
+    }
+  }
