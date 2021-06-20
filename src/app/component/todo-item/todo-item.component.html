@@ -1,6 +1,7 @@
-<div class="todo-item">
-  <input type="checkbox">
+<div [ngClass]="setClasses()">
+  <input type="checkbox" title="Mark as done." [checked]="todo.completed" (change)=" handleChange(todo)">
   <p>{{ todo.title }}</p>
-  <fa-icon [icon]="trashIcon" [styles]="{'stroke': 'red', 'color': '#9E1030FF'}"></fa-icon>
+  <fa-icon [icon]="trashIcon" [styles]="{'stroke': '#9E1030FF', 'color': '#9E1030FF'}" title="Delete todo." (click)=" handleClick(todo)">
+  </fa-icon>
 </div>
 
