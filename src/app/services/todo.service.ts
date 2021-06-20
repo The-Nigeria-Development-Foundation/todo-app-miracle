@@ -28,7 +28,7 @@ export class TodoService {
   }
 
 
-  //  Toggles specific todo completed value in localStorage
+  //  Toggles specific todo completed property in localStorage
   toggleCompleted(todo):void {
 
     //  Retrieves todos Array from localStorage
@@ -36,10 +36,17 @@ export class TodoService {
 
     //  Sets todo Array in localStorage to new todos with the toggled value
     todos.map((todoKey) => {
+
       if (todo.id === todoKey.id) {
         todoKey.completed = !todoKey.completed;
         localStorage.setItem('todo-app', JSON.stringify(todos));
       }
     })
+  }
+
+
+  //  Deletes specific todo in localStorage
+  DeleteTodo(todos):void {
+    localStorage.setItem('todo-app', JSON.stringify(todos));
   }
 }

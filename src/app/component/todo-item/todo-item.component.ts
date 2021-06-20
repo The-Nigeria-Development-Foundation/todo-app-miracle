@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../../models/Todo';
 import { TodoService } from '../../services/todo.service';
 
@@ -15,10 +15,9 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export class TodoItemComponent implements OnInit {
   
   @Input() todo:Todo;
-  
+  @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
 
   constructor(private todoService:TodoService) { }
-
 
   ngOnInit(): void { }
   
@@ -47,8 +46,8 @@ export class TodoItemComponent implements OnInit {
   }
 
 
-  //  Deletes todo 
+  //  Deletes todo in localStorage and UI 
   handleClick(todo): void {
-    console.log('Deleted, major!')
+    this.deleteTodo.emit(todo);
   }
 }
