@@ -25,14 +25,16 @@ export class AddTodoComponent implements OnInit {
 
   handleSubmit(): void {
 
-    const todo = {
-      id: Math.random() * 100,
-      title: this.title,
-      completed: false
-    };
+    if (this.title.trim().length) {
+      const todo = {
+        id: Math.random() * 100,
+        title: this.title,
+        completed: false
+      };
 
-    this.addTodo.emit(todo);
-
+      this.addTodo.emit(todo);
+    }
+    
     this.title = '';
   }
 }

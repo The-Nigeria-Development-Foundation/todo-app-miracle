@@ -1,5 +1,4 @@
 .todo-item {
-  background: #F9D67D;
   height: 30px;
   display: flex;
   align-items: center;
@@ -9,6 +8,7 @@
   margin-bottom: 10px;
   border-radius: 7px;
   position: relative;
+  border-bottom: 1px solid lightgrey;
 }
 
 .todo-item p {
@@ -30,12 +30,12 @@ fa-icon {
   and (min-device-width: 1200px)
   and (max-device-width: 1600px) {
     .todo-item {
-      width: 50vw;
+      width: 55vw;
       height: 25px;
       margin: 0 auto 10px;
     }
 
     fa-icon {
-      right: 26vw;
+      right: 23vw;
     }
   }

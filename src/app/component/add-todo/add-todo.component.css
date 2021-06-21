@@ -1,5 +1,10 @@
 form {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .input-field {
@@ -8,6 +13,7 @@ form {
   border: 1px solid lightgrey;
   border-right: none;
   outline: none;
+  flex: 10;
 }
 
 .input-field:focus-visible {
@@ -21,9 +27,6 @@ form {
   background: #EDC68F;
   border-radius: 3px;
   border: none;
-  position: relative;
-  top: 1.5px;
-  right: 21px;
 }
 
 .isactive {
@@ -33,7 +36,12 @@ form {
 @media screen 
   and (min-device-width: 1200px)
   and (max-device-width: 1600px) {
-    .input-field {
-      width: 50vw;
+    form {
+      width: 60vw;
     }
+
+    .add-btn {
+      position: relative;
+      right: 21px;
+    }    
   }

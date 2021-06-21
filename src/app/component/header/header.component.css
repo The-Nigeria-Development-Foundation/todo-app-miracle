@@ -1,11 +1,13 @@
 h1 {
-  color: #EDC68F;
+  color: lightsalmon;
+  text-align: center;
+  margin: 45px 0;
 }
 
 @media screen 
   and (min-device-width: 1200px)
   and (max-device-width: 1600px) {
     h1 {
-     text-align: center;
+      font-size: 2.3em;
     }
   }
